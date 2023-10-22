@@ -1,16 +1,18 @@
 const express = require("express");
+const cors = require("cors");
 const mongoose = require("mongoose");
 const cloudinary = require("cloudinary").v2;
 
 // ! Creating my server
 const app = express();
+app.use(cors());
 app.use(express.json());
 
 // TODO À sécuriser !
 // ! Linking my project to the following mongoose database
 mongoose.connect(process.env.MONGODB_URI);
 
-// ! Cloudinay credentials
+// ! Cloudinay credentials s
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
   api_key: process.env.CLOUDINARY_API_KEY,
