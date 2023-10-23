@@ -29,6 +29,7 @@ app.use(userRoutes);
 app.use(offerRoutes);
 
 app.get("/", (req, res) => {
+  console.log("OK");
   res.json({ message: "Welcome to my server 🚀" });
 });
 
